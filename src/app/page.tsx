@@ -2,8 +2,19 @@
 
 import Image from 'next/image';
 import { useKeenSlider } from 'keen-slider/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultConfig,
+  defineConfig,
+} from "@chakra-ui/react";
 import 'keen-slider/keen-slider.min.css';
-import ContactForm from '@/components/ContactForm';
+
+const config = defineConfig({
+  cssVarsRoot: ":where(:root, :host)",
+})
+
+const system = createSystem(defaultConfig, config)
 
 export default function Home() {
   const [sliderRef] = useKeenSlider({
@@ -12,6 +23,7 @@ export default function Home() {
   });
 
   return (
+    <ChakraProvider value={system}>
     <main className="min-h-screen p-10 bg-white text-black">
       {/* Header Section */}
       <section className="flex flex-col md:flex-row items-center justify-between gap-10 py-20">
@@ -20,7 +32,7 @@ export default function Home() {
             Hello, I&apos;m Zoe.
           </h1>
           <p className="text-xl md:text-2xl text-gray-700">
-            A Mechatronics Engineer specializing in Software.
+            A Mechatronics Engineer with a passion for Software.
           </p>
         </div>
         <div className="flex-1">
@@ -57,7 +69,6 @@ export default function Home() {
       <section className="py-10">
         <h2 className="text-3xl font-semibold mb-6">Languages</h2>
         
-       
       </section>
 
 
@@ -69,9 +80,10 @@ export default function Home() {
 
       {/* Contact Section */}
       <section className="py-20">
-        <ContactForm />
+        <h2 className="text-3xl font-semibold mb-6">Get in contact</h2>
       </section>
 
     </main>
+    </ChakraProvider>
   );
 }
