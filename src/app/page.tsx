@@ -23,7 +23,7 @@ export default async function Page() {
       >
         <Box flex="2" mb={{ base: 8, md: 0 }}>
           <Heading textStyle="" as="h1" size="7xl" mb={4} color="purple.900">
-            Kia Ora, I'm Zoe
+            Kia Ora, I`&apos;`m Zoe
           </Heading>
           <Text fontSize="lg" color={"purple.700"}>
            A Mechatronics Engineer with a passion for Software.
