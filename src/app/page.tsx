@@ -1,89 +1,120 @@
-'use client';
 
-import Image from 'next/image';
-import { useKeenSlider } from 'keen-slider/react';
 import {
-  ChakraProvider,
-  createSystem,
-  defaultConfig,
-  defineConfig,
-} from "@chakra-ui/react";
-import 'keen-slider/keen-slider.min.css';
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Image,
+  Button,
+} from "@chakra-ui/react"
+import {AiFillLinkedin, AiFillMail, AiOutlineDownload} from "react-icons/ai"
+import WebDevCarosel from "@/components/website-development"
 
-const config = defineConfig({
-  cssVarsRoot: ":where(:root, :host)",
-})
-
-const system = createSystem(defaultConfig, config)
-
-export default function Home() {
-  const [sliderRef] = useKeenSlider({
-    loop: true,
-    slides: { perView: 3, spacing: 15 },
-  });
-
+export default async function Page() {
   return (
-    <ChakraProvider value={system}>
-    <main className="min-h-screen p-10 bg-white text-black">
-      {/* Header Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between gap-10 py-20">
-        <div className="flex-1">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Hello, I&apos;m Zoe.
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700">
-            A Mechatronics Engineer with a passion for Software.
-          </p>
-        </div>
-        <div className="flex-1">
+    <Box p="10%">
+      {/* Section 1: Intro */}
+      <Flex
+        direction={{ base: 'column', md: 'row' }}
+        align="center"
+        justify="space-between"
+        mb={10}
+        px="10%"
+      >
+        <Box flex="2" mb={{ base: 8, md: 0 }}>
+          <Heading textStyle="" as="h1" size="7xl" mb={4} color="purple.900">
+            Kia Ora, I'm Zoe
+          </Heading>
+          <Text fontSize="lg" color={"purple.700"}>
+           A Mechatronics Engineer with a passion for Software.
+          </Text>
+        </Box>
+        <Box flex="1" textAlign="center">
           <Image
             src="/images/headshot.jpg"
-            alt="Zoe"
-            width={400}
-            height={400}
-            className="rounded-lg object-cover"
+            alt="Headshot"
+            boxSize="300px"       
+            borderRadius="full"    
+            objectFit="cover"      
+            mx="auto"
           />
-        </div>
-      </section>
+        </Box>
+      </Flex>
 
-      {/* Web Dev Section */}
-      <section className="py-10">
-        <h2 className="text-3xl font-semibold mb-6">Web Development</h2>
-        <div ref={sliderRef} className="keen-slider">
-          {['/images/denisewilsonwebsite.png', '/images/thetreehousewebsite.png'].map((src, i) => (
-            <div key={i} className="keen-slider__slide">
-              <Image
-                src={src}
-                alt={`Project ${i + 1}`}
-                width={300}
-                height={200}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Section 2: Languages */}
+      <Box textAlign="center" my="5%">
+        <Heading as="h2" size="5xl" mb={6} color="purple.900">
+          Technical Skills
+        </Heading>
 
+        <Flex direction="column" align="center" gap={10}>
+          {/* Professional Experience */}
+          <Box bg="white" w="600px" p={10} borderRadius="xl" boxShadow="sm">
+            <Heading as="h2" size="3xl" mb={6} color="purple.900">
+              Professional Experience
+            </Heading>
+            <Flex justify="center" wrap="wrap" gap={10}>
+              <Image src="/images/python.png" alt="Python" height="100px" />
+            </Flex>
+          </Box>
+
+          {/* University Experience */}
+          <Box bg="white" w="600px" maxW="1000px" p={10} borderRadius="xl" boxShadow="sm">
+            <Heading as="h2" size="3xl" mb={6} color="purple.900">
+              University Experience
+            </Heading>
+            <Flex justify="center" wrap="wrap" gap={10}>
+              <Image src="/images/nextjs.svg" alt="Next.js" height="100px" />
+              <Image src="/images/c.png" alt="C" height="100px" />
+              <Image src="/images/firebase.png" alt="Firebase" height="100px" />
+              <Image src="/images/typescript.png" alt="Typescript" height="100px" />
+              <Image src="/images/javascript.webp" alt="Javascript" height="100px" />
+            </Flex>
+          </Box>
+        </Flex>
+      </Box>
+
+      {/* Section 3: Website Development */}
+      <Box textAlign="center" my="5%" >
+        <Heading as="h2" size="5xl" mb={6} color="purple.900">
+          Website Development
+        </Heading>
+        <Text fontSize="lg" color={"purple.700"} mb={0}>
+           Experience creating websites for clients as well as podcast editing and newsletter design.
+        </Text>
+        <WebDevCarosel />
+      </Box>
+
+      {/* Section 3: Website Development */}
+      <Box textAlign="center" my="5%" >
+        <Heading as="h2" size="5xl" mb={6} color="purple.900">
+          Projects
+        </Heading>
       
-      {/* Languages Section */}
-      <section className="py-10">
-        <h2 className="text-3xl font-semibold mb-6">Languages</h2>
-        
-      </section>
+      </Box>
 
+      {/* Section 3: Contact */}
+      <Box textAlign="center">
+        <Heading as="h2" size="5xl" mb={6} color="purple.900">
+          Get In Touch
+        </Heading>
+        <Flex
+          justify="center"
+          wrap="wrap"
+          gap={10}
+        >
+          <Button size="xl" variant="solid" bg="purple.200" asChild>
+            <a href="https://www.linkedin.com/in/zoesharp01"><AiFillLinkedin />LinkedIn</a>
+          </Button>
+          <Button size="xl" variant="solid" bg="purple.200" asChild>
+            <a href="mailto:zoesharpp@gmail.com"><AiFillMail />Email</a>
+          </Button>
+          <Button size="xl" variant="solid" bg="purple.200" asChild>
+            <a href="./files/Zoe Sharp - CV.pdf " download><AiOutlineDownload />Download CV</a>
+          </Button>
+        </Flex>
+      </Box>
+    </Box>
 
-      {/* Projects Section */}
-      <section className="py-10">
-        <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-      </section>
-
-
-      {/* Contact Section */}
-      <section className="py-20">
-        <h2 className="text-3xl font-semibold mb-6">Get in contact</h2>
-      </section>
-
-    </main>
-    </ChakraProvider>
-  );
+  )
 }
