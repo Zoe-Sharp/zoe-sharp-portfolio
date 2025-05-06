@@ -66,7 +66,7 @@ export default function WebDevCarosel() {
               <Text fontSize="sm" color="gray.600" mb={2}>
                 Year Created: {slide.date}
               </Text>
-              <Link href={slide.link} color="purple.600" fontSize="sm">
+              <Link href={slide.link} color="purple.600" fontSize="sm" target="_blank" rel="noopener noreferrer">
                 Visit Site
               </Link>
             </Box>

@@ -23,7 +23,7 @@ export default async function Page() {
       >
         <Box flex="2" mb={{ base: 8, md: 0 }}>
           <Heading textStyle="" as="h1" size="7xl" mb={4} color="purple.900">
-            Kia Ora, I`&apos;`m Zoe
+            Kia Ora, I&apos;m Zoe
           </Heading>
           <Text fontSize="lg" color={"purple.700"}>
            A Mechatronics Engineer with a passion for Software.
@@ -104,13 +104,13 @@ export default async function Page() {
           gap={10}
         >
           <Button size="xl" variant="solid" bg="purple.200" asChild>
-            <a href="https://www.linkedin.com/in/zoesharp01"><AiFillLinkedin />LinkedIn</a>
+            <a href="https://www.linkedin.com/in/zoesharp01" target="_blank" rel="noopener noreferrer"><AiFillLinkedin />LinkedIn</a>
           </Button>
           <Button size="xl" variant="solid" bg="purple.200" asChild>
-            <a href="mailto:zoesharpp@gmail.com"><AiFillMail />Email</a>
+            <a href="mailto:zoesharpp@gmail.com" target="_blank" rel="noopener noreferrer"><AiFillMail />Email</a>
           </Button>
           <Button size="xl" variant="solid" bg="purple.200" asChild>
-            <a href="./files/Zoe Sharp - CV.pdf " download><AiOutlineDownload />Download CV</a>
+            <a href="./files/Zoe Sharp - CV.pdf " download target="_blank" rel="noopener noreferrer"><AiOutlineDownload />Download CV</a>
           </Button>
         </Flex>
       </Box>
