@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react"
 import {AiFillLinkedin, AiFillMail, AiOutlineDownload} from "react-icons/ai"
 import WebDevCarosel from "@/components/website-development"
+import Projects from "@/components/projects"
 
 export default async function Page() {
   return (
@@ -85,15 +86,16 @@ export default async function Page() {
         <WebDevCarosel />
       </Box>
 
-      {/* Section 3: Website Development */}
+      {/* Section 4: Website Development */}
       <Box textAlign="center" my="5%" >
         <Heading as="h2" size="5xl" mb={6} color="purple.900">
           Projects
         </Heading>
+        <Projects />
       
       </Box>
 
-      {/* Section 3: Contact */}
+      {/* Section 5: Contact */}
       <Box textAlign="center">
         <Heading as="h2" size="5xl" mb={6} color="purple.900">
           Get In Touch
