@@ -56,11 +56,15 @@ export default function WebDevCarosel() {
         {slides.map((slide, index) => (
           <Box key={index} px={4}>
             <Box
-              bg="purple.100"
-              borderRadius="xl"
-              p={6}
-              textAlign="left"
-              h="100%"
+                bg="purple.100"
+                borderRadius="xl"
+                p={6}
+                textAlign="left"
+                h="100%"
+                display="flex"
+                flexDirection="column"
+                justifyContent="normal"
+                minHeight="350px" // You can adjust this height to fit your design
             >
               <Image
                 src={slide.src}
