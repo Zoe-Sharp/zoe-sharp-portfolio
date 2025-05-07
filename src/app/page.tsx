@@ -50,7 +50,7 @@ export default async function Page() {
 
         <Flex direction="column" align="center" gap={10}>
           {/* Professional Experience */}
-          <Box bg="white" w="600px" p={10} borderRadius="xl" boxShadow="sm">
+          <Box bg="white" w={{ base: "80%", md: "60%" }} p={10} borderRadius="xl" boxShadow="sm">
             <Heading as="h2" size="3xl" mb={6} color="purple.900">
               Professional Experience
             </Heading>
@@ -60,7 +60,7 @@ export default async function Page() {
           </Box>
 
           {/* University Experience */}
-          <Box bg="white" w="600px" maxW="1000px" p={10} borderRadius="xl" boxShadow="sm">
+          <Box bg="white" w={{ base: "80%", md: "60%" }} maxW="1000px" p={10} borderRadius="xl" boxShadow="sm">
             <Heading as="h2" size="3xl" mb={6} color="purple.900">
               University Experience
             </Heading>

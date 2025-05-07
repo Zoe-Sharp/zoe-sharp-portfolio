@@ -36,6 +36,17 @@ const settings = {
   slidesToShow: 2,
   slidesToScroll: 1,
   arrows: false,
+  responsive: [
+    {
+      breakpoint: 800, // Below 768px screen width
+      settings: {
+        slidesToShow: 1, // Show only one slide
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+  ],
 };
 
 export default function WebDevCarosel() {
